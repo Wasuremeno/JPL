@@ -32,7 +32,7 @@ const myData: NumericArray = {
     vector: [1, -1, -2, -7, -9, -8, 2, -3, 3, 4, 5, -4, 6, 7, 8, 9,]
 };
 
-export default function Welcome() {
+export default function Silya() {
     return (
         <>
             <Head title="Welcome">
