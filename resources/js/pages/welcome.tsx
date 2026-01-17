@@ -2,26 +2,6 @@ import { Head } from '@inertiajs/react';
 // import './App.css'
 
 
-interface ContentItem {
-    title: string;
-    type: string;
-    text: string;
-}
-
-const content: readonly ContentItem[] = [
-    { title: 'Earl Grey', type: 'Black tea', text: 'Fully oxidized, robust flavor' },
-    { title: 'English breakfast', type: 'Black tea', text: 'Fully oxidized, robust flavor' },
-    { title: 'Darjeeling', type: 'Black tea', text: 'Fully oxidized, robust flavor' },
-    { title: 'Matcha', type: 'Green tea', text: 'Unoxidized, steamed or pan-fired, fresh flavor' },
-    { title: 'Sencha', type: 'Green tea', text: 'Unoxidized, steamed or pan-fired, fresh flavor' },
-    { title: 'Jasmine', type: 'Green tea', text: 'Unoxidized, steamed or pan-fired, fresh flavor' },
-    { title: 'Silver needle', type: 'White tea', text: 'Minimally processed, delicate flavor' },
-    { title: 'White Peony', type: 'White tea', text: 'Minimally processed, delicate flavor' },
-    { title: 'Da Hong Pao', type: 'Oolong', text: 'Partially oxidized, complex, bridging green and black tea' },
-    { title: 'Tieguanyin', type: 'Oolong', text: 'Partially oxidized, complex, bridging green and black tea' },
-    { title: 'Shou Pu-erh', type: 'Pu-erh tea', text: 'Fermented and aged, earthy' },
-    { title: 'Jun Shan Yin Zhen', type: 'Yellow tea', text: 'Rare, gently oxidized, subtle sweetness' },
-] as const;
 
 interface NumericArray {
     vector: number[];
@@ -42,16 +22,7 @@ export default function Welcome() {
 
 
 
-            <ul>
-                {content.map((item) => (
-                    <li>
-                        <h1>{item.title}</h1>
-                        <h2>{item.type}</h2>
-                        <p>{item.text}</p>
-                    </li>
-                ))}
-            </ul>
-
+ 
             <h1>Positive numbers</h1>
             <ul>
                 {myData.vector.filter(num => num > 0).map((num, index) => (
