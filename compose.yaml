@@ -17,6 +17,7 @@ services:
             XDEBUG_MODE: '${SAIL_XDEBUG_MODE:-off}'
             XDEBUG_CONFIG: '${SAIL_XDEBUG_CONFIG:-client_host=host.docker.internal}'
             IGNITION_LOCAL_SITES_PATH: '${PWD}'
+            PHP_DEFAULT_CHARSET: 'UTF-8'
         volumes:
             - '.:/var/www/html'
             - './docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf'
@@ -30,6 +31,8 @@ services:
         ports:
             - '${FORWARD_DB_PORT:-3306}:3306'
         environment:
+            LANG: C.UTF-8
+            LC_ALL: C.UTF-8
             MYSQL_ROOT_PASSWORD: '${DB_PASSWORD}'
             MYSQL_ROOT_HOST: '%'
             MYSQL_DATABASE: '${DB_DATABASE}'
@@ -37,6 +40,12 @@ services:
             MYSQL_PASSWORD: '${DB_PASSWORD}'
             MYSQL_ALLOW_EMPTY_PASSWORD: 1
             MYSQL_EXTRA_OPTIONS: '${MYSQL_EXTRA_OPTIONS:-}'
+            MYSQL_CHARSET: 'utf8mb4'
+            MYSQL_COLLATION: 'utf8mb4_unicode_ci'
+            MYSQL_INITDB_ARGS: '--character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci'
+        command: 
+            - --character-set-server=utf8mb4
+            - --collation-server=utf8mb4_unicode_ci
         volumes:
             - 'sail-mysql:/var/lib/mysql'
             - './vendor/laravel/sail/database/mysql/create-testing-database.sh:/docker-entrypoint-initdb.d/10-create-testing-database.sh'
