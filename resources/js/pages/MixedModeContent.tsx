@@ -1,5 +1,5 @@
-// import React from 'react';
-import { Head, Link } from '@inertiajs/react';
+import React from 'react';
+import { Head } from '@inertiajs/react';
 import Navigation from '@/components/Navigation';
 import MixedModeContent from '@/components/MixedModeContent'; 
 import ThemeToggle from '@/components/ThemeToggle';

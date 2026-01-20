@@ -1,0 +1,18 @@
+[90m= [39m[34;4mApp\Models\Japanese[39;24m {#5847
+    [34mid[39m: [35m1[39m,
+    [34mfurigana[39m: "[32mあかい[39m",
+    [34mkanji[39m: "[32m赤い[39m",
+    [34menglish[39m: "[32mred[39m",
+    [34mmemorized[39m: [35m1[39m,
+    [34mkatakana[39m: [36mnull[39m,
+    [34mcreated_at[39m: [36mnull[39m,
+    [34mupdated_at[39m: [36mnull[39m,
+    [34mimage[39m: [34;4mApp\Models\JapaneseImg[39;24m {#5400
+      [34mimg_ID[39m: [35m1[39m,
+      [34mimg_path[39m: "[32m1[39m",
+      [34mid[39m: [35m1[39m,
+      [34mcreated_at[39m: [36mnull[39m,
+      [34mupdated_at[39m: [36mnull[39m,
+    },
+  }
+
