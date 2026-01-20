@@ -116,6 +116,7 @@
     "include": [
         "resources/js/**/*.ts",
         "resources/js/**/*.d.ts",
+        "__tests__/**/*",
         "resources/js/**/*.tsx",
     ]
 }

@@ -1,0 +1,27 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "🚀 Running pre-push checks..."
+
+# Run all PHP tests
+echo "🧪 Running all PHP tests..."
+if ! sail php artisan test --parallel; then
+    echo "❌ PHP tests failed! Push aborted."
+    exit 1
+fi
+
+# Run all JavaScript tests
+echo "🧪 Running all JavaScript tests..."
+if ! sail npm run test:js -- --run; then
+    echo "❌ JavaScript tests failed! Push aborted."
+    exit 1
+fi
+
+# TypeScript check
+echo "📝 Running TypeScript check..."
+if ! sail npm run typecheck; then
+    echo "❌ TypeScript check failed! Push aborted."
+    exit 1
+fi
+
+echo "✅ All tests passed! Pushing..."

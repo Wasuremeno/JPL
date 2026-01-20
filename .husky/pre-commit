@@ -1,0 +1,27 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "🚀 Running pre-commit checks..."
+
+# Run PHP tests with Pest (parallel for speed)
+echo "🧪 Running PHP tests with Pest..."
+if ! ./vendor/bin/sail artisan test --parallel --stop-on-failure; then
+    echo "❌ PHP tests failed! Commit aborted."
+    exit 1
+fi
+
+# Run JavaScript tests with Vitest for changed files
+echo "🧪 Running JavaScript tests..."
+if ! npm run test:js; then
+    echo "❌ JavaScript tests failed! Commit aborted."
+    exit 1
+fi
+
+# Run lint-staged for auto-fixing and testing staged files
+echo "✨ Running lint-staged..."
+if ! npx lint-staged; then
+    echo "❌ Lint-staged checks failed! Commit aborted."
+    exit 1
+fi
+
+echo "✅ All pre-commit checks passed!"
