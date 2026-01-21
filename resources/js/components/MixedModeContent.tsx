@@ -91,7 +91,7 @@ const MixedModeContent = ({ title, japaneseWords }: MixedModeContentProps) => {
                     {title}
                 </h1>
                 <div className="dark:bg-[#212121] bg-white rounded-[18px] shadow-md p-6 text-center">
-                    <p className="text-white text-lg">No words available</p>
+                    <p className="dark:text-white text-black text-lg">No words available</p>
                 </div>
             </div>
         );
@@ -116,7 +116,7 @@ const MixedModeContent = ({ title, japaneseWords }: MixedModeContentProps) => {
 
                     {/* English translation */}
                     <div className="">
-                        <p className="text-white text-xl font-semibold">{randomWord.english}</p>
+                        <p className="dark:text-white text-black text-xl font-semibold">{randomWord.english}</p>
                     </div>
                     
                     {/* Word details */}

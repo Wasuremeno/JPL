@@ -23,16 +23,16 @@ export default function Welcome() {
 
 
  
-            <h1>Positive numbers</h1>
+            <h1 className="dark:text-white text-black text-xl font-semibold">Positive numbers</h1>
             <ul>
                 {myData.vector.filter(num => num > 0).map((num, index) => (
-                    <li key={index}>{num}</li>
+                    <li className="dark:text-white text-black text-xl font-semibold" key={index}>{num}</li>
                 ))}
             </ul>
-            <h1>Negative numbers</h1>
+            <h1 className="dark:text-white text-black text-xl font-semibold">Negative numbers</h1>
             <ul>
                 {myData.vector.filter(num => num < 0).map((num, index) => (
-                    <li key={index}>{num}</li>
+                    <li className="dark:text-white text-black text-xl font-semibold" key={index}>{num}</li>
                 ))}
             </ul>
 

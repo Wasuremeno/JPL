@@ -45,9 +45,9 @@ export default function Silya() {
             <ul>
                 {content.map((item) => (
                     <li>
-                        <h1>{item.title}</h1>
-                        <h2>{item.type}</h2>
-                        <p>{item.text}</p>
+                        <h1 className="dark:text-white text-black text-xl font-semibold">{item.title}</h1>
+                        <h2 className="dark:text-white text-black text-xl font-semibold">{item.type}</h2>
+                        <p className="dark:text-white text-black text-xl font-semibold">{item.text}</p>
                     </li>
                 ))}
             </ul>
