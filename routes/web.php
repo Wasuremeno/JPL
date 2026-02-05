@@ -9,7 +9,7 @@ use App\Models\Japanese;
 
 Route::get('/', function () {
     return Inertia::render('welcome');
-})->name('home');
+})->name('mixed-mode');
 
 Route::get('/silya', function () {
     return Inertia::render('silya');
