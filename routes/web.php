@@ -14,6 +14,9 @@ Route::get('/', function () {
 Route::get('/silya', function () {
     return Inertia::render('silya');
 });
+Route::get('/Menu', function () {
+    return Inertia::render('Menu');
+});
 
 
 

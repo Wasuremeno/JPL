@@ -2,6 +2,11 @@ import { Head } from '@inertiajs/react';
 // import './App.css'
 
 
+
+
+
+
+
 interface ContentItem {
     title: string;
     type: string;

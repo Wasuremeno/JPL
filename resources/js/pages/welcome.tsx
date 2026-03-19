@@ -1,16 +1,10 @@
 import { Head } from '@inertiajs/react';
+import LearnContext from '@/components/LearnContext';
 // import './App.css'
 
 
 
-interface NumericArray {
-    vector: number[];
-}
 
-
-const myData: NumericArray = {
-    vector: [1, -1, -2, -7, -9, -8, 2, -3, 3, 4, 5, -4, 6, 7, 8, 9,]
-};
 
 export default function Welcome() {
     return (
@@ -20,22 +14,7 @@ export default function Welcome() {
                 <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
             </Head>
 
-
-
- 
-            <h1 className="dark:text-white text-black text-xl font-semibold">Positive numbers</h1>
-            <ul>
-                {myData.vector.filter(num => num > 0).map((num, index) => (
-                    <li className="dark:text-white text-black text-xl font-semibold" key={index}>{num}</li>
-                ))}
-            </ul>
-            <h1 className="dark:text-white text-black text-xl font-semibold">Negative numbers</h1>
-            <ul>
-                {myData.vector.filter(num => num < 0).map((num, index) => (
-                    <li className="dark:text-white text-black text-xl font-semibold" key={index}>{num}</li>
-                ))}
-            </ul>
-
+            <LearnContext></LearnContext>
         </>
     );
 }
